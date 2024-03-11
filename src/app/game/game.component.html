@@ -1,0 +1,59 @@
+<div>
+
+
+  <div class="main">
+
+    <div class="left">
+      <div class="header">
+        <span class="data">
+            <h2>❌ : {{ player1 }}</h2>
+            <h2 style="color: greenyellow;">Score : {{player1Score}}</h2>
+        </span>
+
+        <span class="data">
+            <h2>⭕ : {{ player2 }}</h2>
+            <h2 style="color: greenyellow;">Score : {{player2Score}}</h2>
+        </span>
+      </div>
+
+
+      <div class="board">
+        <button *ngFor="let cell of board; let i = index" (click)="handleButtonClick(i)">
+          {{ getCellValue(cell)}}</button>
+      </div>
+
+      <div class="status">
+        <div *ngIf="winner; else other" class="winner">
+          <h3>
+            {{ winner }}
+          </h3>
+        </div>
+        <ng-template #other>
+          <h3>
+            {{chance}}
+          </h3>
+        </ng-template>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <h1>Winners 👑</h1>
+      <div class="self"></div>
+
+      <div class="winnerbox">
+
+        <div class="tokens" *ngFor="let winner of winners.slice().reverse()">
+            <p>{{winner}}</p>
+        </div>
+        
+      </div>
+      <div class="self"></div>
+      <div class="bottom-btns">
+        <button (click) = "resetGame();">NEW GAME</button>
+        <button (click) = "quitGame();">QUIT</button>
+      </div>
+    </div>
+  </div>
+
+</div>

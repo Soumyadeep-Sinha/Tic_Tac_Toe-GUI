@@ -1,0 +1,12 @@
+<div class="main-container">
+    <h1>WELCOME TO TIC-TAC-TOE</h1>
+
+    <p>Player 1 name : {{player1}}</p>
+    <p>Player 2 name : {{player2}}</p>
+
+
+    <input type="text" name="player1" [(ngModel)]="player1" placeholder="Enter player 1 name" required>
+    <input type="text" name="player2" [(ngModel)]="player2" placeholder="Enter player 2 name" required>
+    <button (click) = "savePlayers();">START GAME</button>
+    
+</div>
