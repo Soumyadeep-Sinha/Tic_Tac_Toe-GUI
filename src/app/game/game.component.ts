@@ -86,6 +86,9 @@ export class GameComponent implements OnInit {
     //tie
     if (!this.board.includes(0)) {
       this.winner = "Tie";
+      this.player1Score += 5;
+      this.player2Score += 5;
+      this.winners.push("GAME DRAW");
     }
   }
 
